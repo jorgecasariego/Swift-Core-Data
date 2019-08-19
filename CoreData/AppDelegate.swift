@@ -8,6 +8,13 @@
 
 import UIKit
 
+// Para cambiar el status bar color a blanco creamos nuestro propio navigation controller y con esto creamos el navController
+class CustomNavigationController: UINavigationController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,7 +22,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        // Por default el navigation bar es un poco transparente. Con esto desactivamos
+        UINavigationBar.appearance().isTranslucent = false
+        let lightRed = UIColor.rgb(red: 247, green: 66, blue: 82)
+        UINavigationBar.appearance().barTintColor = lightRed
+        UINavigationBar.appearance().tintColor = .white
+        
+        
+        // Titulo Grande
+        UINavigationBar.appearance().prefersLargeTitles = true
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        // Titulo Pequeño
+        UINavigationBar.appearance().titleTextAttributes  = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        let companiesController = CompaniesController()
+        let navController = CustomNavigationController(rootViewController: companiesController)
+        window?.rootViewController = navController
+        
+        
         return true
     }
 
