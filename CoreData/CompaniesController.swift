@@ -8,18 +8,28 @@
 
 import UIKit
 
-class CompaniesController: UITableViewController {
+class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
     let cellId = "cellId"
-    let companies: [Company] = [
+    var companies: [Company] = [
         Company(name: "Apple", founded: Date()),
         Company(name: "Google", founded: Date()),
         Company(name: "Microsoft", founded: Date()),
     ]
     
+    func didAddCompany(company: Company) {
+        // 1. Modify your array
+        companies.append(company)
+        
+        // 2. Insert a new index path to the tableview
+        let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
+        tableView.insertRows(at: [newIndexPath], with: .automatic)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.title = "Companies"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "plus").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(handleAddCompany))
         
         tableView.backgroundColor = UIColor.rgb(red: 9, green: 45, blue: 64)
@@ -32,6 +42,9 @@ class CompaniesController: UITableViewController {
     @objc fileprivate func handleAddCompany() {
         let createCompanyController = CreateCompanyController()
         let navController = CustomNavigationController(rootViewController: createCompanyController)
+        
+        createCompanyController.delegate = self
+        
         present(navController, animated: true, completion: nil)
     }
     
