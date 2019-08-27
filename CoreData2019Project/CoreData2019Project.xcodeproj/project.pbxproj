@@ -16,6 +16,7 @@
 		279142C523159ADE002A8565 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142C423159ADE002A8565 /* Extensions.swift */; };
 		279142C723159AEC002A8565 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142C623159AEC002A8565 /* Company.swift */; };
 		279142CA23159B28002A8565 /* DataCoreTestModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 279142C823159B28002A8565 /* DataCoreTestModels.xcdatamodeld */; };
+		279142CC2315BA42002A8565 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142CB2315BA42002A8565 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		279142C423159ADE002A8565 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		279142C623159AEC002A8565 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		279142C923159B28002A8565 /* DataCoreTestModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataCoreTestModels.xcdatamodel; sourceTree = "<group>"; };
+		279142CB2315BA42002A8565 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				279142B723159A93002A8565 /* LaunchScreen.storyboard */,
 				279142BA23159A93002A8565 /* Info.plist */,
 				279142C823159B28002A8565 /* DataCoreTestModels.xcdatamodeld */,
+				279142CB2315BA42002A8565 /* CoreDataManager.swift */,
 			);
 			path = CoreData2019Project;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 				279142AF23159A92002A8565 /* AppDelegate.swift in Sources */,
 				279142C323159ACA002A8565 /* CreateCompanyController.swift in Sources */,
 				279142CA23159B28002A8565 /* DataCoreTestModels.xcdatamodeld in Sources */,
+				279142CC2315BA42002A8565 /* CoreDataManager.swift in Sources */,
 				279142C723159AEC002A8565 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
