@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  CoreData
+//  CoreData2019Project
 //
-//  Created by Jorge Casariego on 6/13/19.
+//  Created by Jorge Casariego on 8/27/19.
 //  Copyright © 2019 Jorge Casariego. All rights reserved.
 //
 

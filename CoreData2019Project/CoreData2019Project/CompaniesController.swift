@@ -7,14 +7,12 @@
 //
 
 import UIKit
+import CoreData
+
 
 class CompaniesController: UITableViewController, CreateCompanyControllerDelegate {
     let cellId = "cellId"
-    var companies: [Company] = [
-        Company(name: "Apple", founded: Date()),
-        Company(name: "Google", founded: Date()),
-        Company(name: "Microsoft", founded: Date()),
-    ]
+    var companies = [Company]()
     
     func didAddCompany(company: Company) {
         // 1. Modify your array
@@ -37,6 +35,31 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.tableFooterView = UIView()
         tableView.separatorColor = .white
+        
+        fetchCompanies()
+    }
+    
+    func fetchCompanies() {
+        // 1. Initialization of our Core Data Stack
+        let persistentContainer = NSPersistentContainer(name: "DataCoreTestModels")
+        persistentContainer.loadPersistentStores { (storeDescription, err) in
+            if let err = err {
+                fatalError("Loading of store failed: \(err)")
+            }
+        }
+        
+        let context = persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<Company>(entityName: "Company")
+        
+        do {
+            let companies = try context.fetch(fetchRequest)
+            companies.forEach( { (company) in
+                print(company.name ?? "")
+            })
+        } catch let fetchError {
+            print("Failed to fetch companies: ", fetchError)
+        }
+        
     }
     
     @objc fileprivate func handleAddCompany() {
@@ -65,17 +88,17 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         cell.backgroundColor = UIColor.rgb(red: 48, green: 164, blue: 182)
-
+        
         let company = companies[indexPath.item]
         cell.textLabel?.text = company.name
         return cell
     }
     
     // OJO: Con solo esto no cambiamos el status bar color a blanco
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-
-
+    //    override var preferredStatusBarStyle: UIStatusBarStyle {
+    //        return .lightContent
+    //    }
+    
+    
 }
 

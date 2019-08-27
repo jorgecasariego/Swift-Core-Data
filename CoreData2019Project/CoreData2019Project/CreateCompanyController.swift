@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //Custom Delegation
 protocol CreateCompanyControllerDelegate {
@@ -37,6 +38,7 @@ class CreateCompanyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         setupUI()
         
         navigationItem.title = "Create Company"
@@ -45,14 +47,33 @@ class CreateCompanyController: UIViewController {
     }
     
     @objc fileprivate func handleSave() {
-        print("trying to save company")
-        dismiss(animated: true) {
-            guard let name = self.nameTextField.text else { return }
-            
-            let company = Company(name: name, founded: Date())
-            self.delegate?.didAddCompany(company: company)
-        }
+        //        print("trying to save company")
+        //        dismiss(animated: true) {
+        //            guard let name = self.nameTextField.text else { return }
+        //
+        //            let company = Company(name: name, founded: Date())
+        //            self.delegate?.didAddCompany(company: company)
+        //        }
         
+        // 1. Initialization of our Core Data Stack
+        let persistentContainer = NSPersistentContainer(name: "DataCoreTestModels")
+        persistentContainer.loadPersistentStores { (storeDescription, err) in
+            if let err = err {
+                fatalError("Loading of store failed: \(err)")
+            }
+            
+            
+        }
+        // 2. Perform the save
+        let context = persistentContainer.viewContext
+        let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
+        company.setValue(nameTextField.text, forKey: "name")
+        
+        do {
+            try context.save()
+        } catch let saveError {
+            print("Failed to save company: ", saveError)
+        }
         
     }
     
