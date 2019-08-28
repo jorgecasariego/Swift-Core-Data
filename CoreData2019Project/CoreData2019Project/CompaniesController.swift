@@ -23,6 +23,12 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
     
+    func didEditCompany(company: Company) {
+        let row = companies.index(of: company)
+        let reloadIndexPath = IndexPath(item: row!, section: 0)
+        tableView.reloadRows(at: [reloadIndexPath], with: .middle)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -106,17 +112,24 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
             } catch let saveError {
                 print("Failed to delete company: ", saveError)
             }
-            
-            
         }
         
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
-            print("Editing company....")
-        }
+        deleteAction.backgroundColor = UIColor.lightRed
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit", handler: editHandlerFunction)
+        editAction.backgroundColor = UIColor.darkBlue
         
         return [deleteAction, editAction]
     }
     
+    private func editHandlerFunction(action: UITableViewRowAction, indexPath: IndexPath) {
+        let editCompanyController = CreateCompanyController()
+        editCompanyController.delegate = self
+        editCompanyController.company = companies[indexPath.row]
+        let navController = CustomNavigationController(rootViewController: editCompanyController)
+        present(navController, animated: true)
+        
+    }
     
 }
 
