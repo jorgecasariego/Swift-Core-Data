@@ -88,10 +88,34 @@ class CompaniesController: UITableViewController, CreateCompanyControllerDelegat
         return cell
     }
     
-    // OJO: Con solo esto no cambiamos el status bar color a blanco
-    //    override var preferredStatusBarStyle: UIStatusBarStyle {
-    //        return .lightContent
-    //    }
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            let company = self.companies[indexPath.row]
+            print("Attemting to delete company, ", company.name ?? "")
+            
+            //1. Remove the company from the tableview
+            self.companies.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            //2. Delete the company from the CoreData
+            let context = CoreDataManager.shared.persistentContainer.viewContext
+            context.delete(company)
+            
+            do {
+                try context.save()
+            } catch let saveError {
+                print("Failed to delete company: ", saveError)
+            }
+            
+            
+        }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            print("Editing company....")
+        }
+        
+        return [deleteAction, editAction]
+    }
     
     
 }
