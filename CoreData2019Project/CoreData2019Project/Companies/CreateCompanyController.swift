@@ -109,7 +109,8 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
         super.viewDidLoad()
         setupUI()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
+        setupCancelButton()
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(handleCancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(handleSave))
     }
     
@@ -211,9 +212,9 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
         
     }
     
-    @objc func handleCancel() {
-        dismiss(animated: true, completion: nil)
-    }
+//    @objc func handleCancel() {
+//        dismiss(animated: true, completion: nil)
+//    }
     
     
 }
