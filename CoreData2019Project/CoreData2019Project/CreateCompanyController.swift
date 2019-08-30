@@ -21,6 +21,11 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
             nameTextField.text = company?.name
             guard let founded = company?.founded else { return }
             datePicker.date = founded
+            
+            if let imageData = company?.imageData {
+                companyImageView.image = UIImage(data: imageData)
+            }
+            
         }
     }
     
@@ -33,6 +38,11 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectPhoto)))
+        imageView.layer.cornerRadius = imageView.frame.width / 2
+        imageView.clipsToBounds = true
+        imageView.layer.borderColor = UIColor.darkBlue.cgColor
+        imageView.layer.borderWidth = 2
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -116,6 +126,11 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
         company?.name = nameTextField.text
         company?.founded = datePicker.date
         
+        if let companyImage = companyImageView.image {
+            let imageData = companyImage.jpegData(compressionQuality: 0.8)
+            company?.imageData = imageData
+        }
+        
         do {
             try context.save()
             dismiss(animated: true, completion: {
@@ -134,6 +149,12 @@ class CreateCompanyController: UIViewController, UINavigationControllerDelegate,
         let company = NSEntityDescription.insertNewObject(forEntityName: "Company", into: context)
         company.setValue(nameTextField.text, forKey: "name")
         company.setValue(datePicker.date, forKey: "founded")
+        
+        if let companyImage = companyImageView.image {
+            let imageData = companyImage.jpegData(compressionQuality: 0.8)
+            company.setValue(imageData, forKey: "imageData")
+        }
+        
         
         do {
             try context.save()

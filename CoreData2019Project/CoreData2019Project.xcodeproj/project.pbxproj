@@ -17,6 +17,9 @@
 		279142C723159AEC002A8565 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142C623159AEC002A8565 /* Company.swift */; };
 		279142CA23159B28002A8565 /* DataCoreTestModels.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 279142C823159B28002A8565 /* DataCoreTestModels.xcdatamodeld */; };
 		279142CC2315BA42002A8565 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142CB2315BA42002A8565 /* CoreDataManager.swift */; };
+		279142CE231864F1002A8565 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142CD231864F1002A8565 /* CompanyCell.swift */; };
+		279142D12318C9DA002A8565 /* CompaniesController+CreateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */; };
+		279142D32318CAB0002A8565 /* CompaniesController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		279142C623159AEC002A8565 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		279142C923159B28002A8565 /* DataCoreTestModels.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataCoreTestModels.xcdatamodel; sourceTree = "<group>"; };
 		279142CB2315BA42002A8565 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		279142CD231864F1002A8565 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
+		279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CreateCompany.swift"; sourceTree = "<group>"; };
+		279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,8 +70,8 @@
 		279142AD23159A92002A8565 /* CoreData2019Project */ = {
 			isa = PBXGroup;
 			children = (
+				279142CF231865A6002A8565 /* Companies */,
 				279142AE23159A92002A8565 /* AppDelegate.swift */,
-				279142C023159AB2002A8565 /* CompaniesController.swift */,
 				279142C223159ACA002A8565 /* CreateCompanyController.swift */,
 				279142C423159ADE002A8565 /* Extensions.swift */,
 				279142C623159AEC002A8565 /* Company.swift */,
@@ -77,6 +83,17 @@
 				279142CB2315BA42002A8565 /* CoreDataManager.swift */,
 			);
 			path = CoreData2019Project;
+			sourceTree = "<group>";
+		};
+		279142CF231865A6002A8565 /* Companies */ = {
+			isa = PBXGroup;
+			children = (
+				279142C023159AB2002A8565 /* CompaniesController.swift */,
+				279142CD231864F1002A8565 /* CompanyCell.swift */,
+				279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */,
+				279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */,
+			);
+			path = Companies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +167,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279142D12318C9DA002A8565 /* CompaniesController+CreateCompany.swift in Sources */,
 				279142C523159ADE002A8565 /* Extensions.swift in Sources */,
 				279142C123159AB2002A8565 /* CompaniesController.swift in Sources */,
 				279142AF23159A92002A8565 /* AppDelegate.swift in Sources */,
+				279142CE231864F1002A8565 /* CompanyCell.swift in Sources */,
+				279142D32318CAB0002A8565 /* CompaniesController+UITableView.swift in Sources */,
 				279142C323159ACA002A8565 /* CreateCompanyController.swift in Sources */,
 				279142CA23159B28002A8565 /* DataCoreTestModels.xcdatamodeld in Sources */,
 				279142CC2315BA42002A8565 /* CoreDataManager.swift in Sources */,
