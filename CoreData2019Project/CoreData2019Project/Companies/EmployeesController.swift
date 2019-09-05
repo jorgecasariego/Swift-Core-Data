@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import CoreData
 
 class EmployeesController: UITableViewController {
     
     var company: Company? = nil
+    var employees = [Employee]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationItem.title = company?.name
+        fetchEmployees()
+    }
+    
+    private func fetchEmployees() {
+        let context = CoreDataManager.shared.persistentContainer.viewContext
+        let request = NSFetchRequest<Employee>(entityName: "Employee")
+        
+        do {
+            let employees = try context.fetch(request)
+            employees.forEach{ print("Employee name: ", $0.name ?? "")}
+            
+        } catch let fetchEmployeeError {
+            print(fetchEmployeeError)
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -31,4 +48,6 @@ class EmployeesController: UITableViewController {
         let navController = UINavigationController(rootViewController: employeeController)
         present(navController, animated: true)
     }
+    
+    
 }
