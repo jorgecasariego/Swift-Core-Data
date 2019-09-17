@@ -9,18 +9,21 @@
 import UIKit
 
 extension CompaniesController: CreateCompanyControllerDelegate {
+    
+    func didEditCompany(company: Company) {
+        // update my tableview somehow
+        let row = companies.index(of: company)
+        let reloadIndexPath = IndexPath(row: row!, section: 0)
+        tableView.reloadRows(at: [reloadIndexPath], with: .middle)
+    }
+    
+    
     func didAddCompany(company: Company) {
-        // 1. Modify your array
         companies.append(company)
-        
-        // 2. Insert a new index path to the tableview
         let newIndexPath = IndexPath(row: companies.count - 1, section: 0)
         tableView.insertRows(at: [newIndexPath], with: .automatic)
     }
     
-    func didEditCompany(company: Company) {
-        let row = companies.firstIndex(of: company)
-        let reloadIndexPath = IndexPath(item: row!, section: 0)
-        tableView.reloadRows(at: [reloadIndexPath], with: .middle)
-    }
+    // specify your extension methods here....
+    
 }

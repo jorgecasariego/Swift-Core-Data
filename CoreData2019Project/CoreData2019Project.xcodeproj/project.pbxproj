@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2706697423307D7900FB0CEE /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697323307D7900FB0CEE /* EmployeesController.swift */; };
+		2706697623307D9000FB0CEE /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697523307D9000FB0CEE /* CreateEmployeeController.swift */; };
+		2706697823307DA300FB0CEE /* EmployeeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697723307DA300FB0CEE /* EmployeeType.swift */; };
+		2706697A23307E2700FB0CEE /* CompaniesAutoUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697923307E2700FB0CEE /* CompaniesAutoUpdateController.swift */; };
+		2706697C23307E3900FB0CEE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697B23307E3900FB0CEE /* Service.swift */; };
+		2706697E23307E7000FB0CEE /* UIColor+theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697D23307E7000FB0CEE /* UIColor+theme.swift */; };
+		2706698023307E9E00FB0CEE /* CustomMigrationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2706697F23307E9E00FB0CEE /* CustomMigrationPolicy.swift */; };
+		270669852330829000FB0CEE /* Modelv1.1_2.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = 270669842330829000FB0CEE /* Modelv1.1_2.xcmappingmodel */; };
 		279142AF23159A92002A8565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142AE23159A92002A8565 /* AppDelegate.swift */; };
 		279142B423159A92002A8565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 279142B223159A92002A8565 /* Main.storyboard */; };
 		279142B623159A93002A8565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 279142B523159A93002A8565 /* Assets.xcassets */; };
@@ -20,12 +28,21 @@
 		279142CE231864F1002A8565 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142CD231864F1002A8565 /* CompanyCell.swift */; };
 		279142D12318C9DA002A8565 /* CompaniesController+CreateCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */; };
 		279142D32318CAB0002A8565 /* CompaniesController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */; };
-		279142D52318CD7B002A8565 /* EmployeesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D42318CD7B002A8565 /* EmployeesController.swift */; };
 		279142D82318CF2C002A8565 /* UIViewController+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D72318CF2C002A8565 /* UIViewController+Helpers.swift */; };
-		279142DA2318D019002A8565 /* CreateEmployeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279142D92318D019002A8565 /* CreateEmployeeController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2706697323307D7900FB0CEE /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
+		2706697523307D9000FB0CEE /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
+		2706697723307DA300FB0CEE /* EmployeeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeType.swift; sourceTree = "<group>"; };
+		2706697923307E2700FB0CEE /* CompaniesAutoUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesAutoUpdateController.swift; sourceTree = "<group>"; };
+		2706697B23307E3900FB0CEE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		2706697D23307E7000FB0CEE /* UIColor+theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+theme.swift"; sourceTree = "<group>"; };
+		2706697F23307E9E00FB0CEE /* CustomMigrationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMigrationPolicy.swift; sourceTree = "<group>"; };
+		27066981233080A700FB0CEE /* DataCoreTestModels_v1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataCoreTestModels_v1.1.xcdatamodel; sourceTree = "<group>"; };
+		27066982233080DE00FB0CEE /* DataCoreTestModels_v1.3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataCoreTestModels_v1.3.xcdatamodel; sourceTree = "<group>"; };
+		270669832330822000FB0CEE /* DataCoreTestModels_v1.2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataCoreTestModels_v1.2.xcdatamodel; sourceTree = "<group>"; };
+		270669842330829000FB0CEE /* Modelv1.1_2.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = Modelv1.1_2.xcmappingmodel; sourceTree = "<group>"; };
 		279142AB23159A92002A8565 /* CoreData2019Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreData2019Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		279142AE23159A92002A8565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		279142B323159A92002A8565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,9 +58,7 @@
 		279142CD231864F1002A8565 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 		279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+CreateCompany.swift"; sourceTree = "<group>"; };
 		279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CompaniesController+UITableView.swift"; sourceTree = "<group>"; };
-		279142D42318CD7B002A8565 /* EmployeesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesController.swift; sourceTree = "<group>"; };
 		279142D72318CF2C002A8565 /* UIViewController+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Helpers.swift"; sourceTree = "<group>"; };
-		279142D92318D019002A8565 /* CreateEmployeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEmployeeController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +72,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2706697223307D6C00FB0CEE /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				2706697323307D7900FB0CEE /* EmployeesController.swift */,
+				2706697523307D9000FB0CEE /* CreateEmployeeController.swift */,
+				2706697723307DA300FB0CEE /* EmployeeType.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
 		279142A223159A92002A8565 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +112,9 @@
 				279142BA23159A93002A8565 /* Info.plist */,
 				279142C823159B28002A8565 /* DataCoreTestModels.xcdatamodeld */,
 				279142CB2315BA42002A8565 /* CoreDataManager.swift */,
+				2706697D23307E7000FB0CEE /* UIColor+theme.swift */,
+				2706697F23307E9E00FB0CEE /* CustomMigrationPolicy.swift */,
+				270669842330829000FB0CEE /* Modelv1.1_2.xcmappingmodel */,
 			);
 			path = CoreData2019Project;
 			sourceTree = "<group>";
@@ -94,13 +122,14 @@
 		279142CF231865A6002A8565 /* Companies */ = {
 			isa = PBXGroup;
 			children = (
+				2706697223307D6C00FB0CEE /* Employees */,
 				279142C023159AB2002A8565 /* CompaniesController.swift */,
 				279142CD231864F1002A8565 /* CompanyCell.swift */,
 				279142D02318C9DA002A8565 /* CompaniesController+CreateCompany.swift */,
 				279142D22318CAB0002A8565 /* CompaniesController+UITableView.swift */,
 				279142C223159ACA002A8565 /* CreateCompanyController.swift */,
-				279142D42318CD7B002A8565 /* EmployeesController.swift */,
-				279142D92318D019002A8565 /* CreateEmployeeController.swift */,
+				2706697923307E2700FB0CEE /* CompaniesAutoUpdateController.swift */,
+				2706697B23307E3900FB0CEE /* Service.swift */,
 			);
 			path = Companies;
 			sourceTree = "<group>";
@@ -189,14 +218,20 @@
 				279142C123159AB2002A8565 /* CompaniesController.swift in Sources */,
 				279142AF23159A92002A8565 /* AppDelegate.swift in Sources */,
 				279142D82318CF2C002A8565 /* UIViewController+Helpers.swift in Sources */,
+				2706697423307D7900FB0CEE /* EmployeesController.swift in Sources */,
 				279142CE231864F1002A8565 /* CompanyCell.swift in Sources */,
+				2706697623307D9000FB0CEE /* CreateEmployeeController.swift in Sources */,
 				279142D32318CAB0002A8565 /* CompaniesController+UITableView.swift in Sources */,
-				279142DA2318D019002A8565 /* CreateEmployeeController.swift in Sources */,
-				279142D52318CD7B002A8565 /* EmployeesController.swift in Sources */,
+				2706697E23307E7000FB0CEE /* UIColor+theme.swift in Sources */,
+				2706697C23307E3900FB0CEE /* Service.swift in Sources */,
 				279142C323159ACA002A8565 /* CreateCompanyController.swift in Sources */,
 				279142CA23159B28002A8565 /* DataCoreTestModels.xcdatamodeld in Sources */,
+				2706697A23307E2700FB0CEE /* CompaniesAutoUpdateController.swift in Sources */,
 				279142CC2315BA42002A8565 /* CoreDataManager.swift in Sources */,
 				279142C723159AEC002A8565 /* Company.swift in Sources */,
+				270669852330829000FB0CEE /* Modelv1.1_2.xcmappingmodel in Sources */,
+				2706697823307DA300FB0CEE /* EmployeeType.swift in Sources */,
+				2706698023307E9E00FB0CEE /* CustomMigrationPolicy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,9 +436,12 @@
 		279142C823159B28002A8565 /* DataCoreTestModels.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				270669832330822000FB0CEE /* DataCoreTestModels_v1.2.xcdatamodel */,
+				27066982233080DE00FB0CEE /* DataCoreTestModels_v1.3.xcdatamodel */,
+				27066981233080A700FB0CEE /* DataCoreTestModels_v1.1.xcdatamodel */,
 				279142C923159B28002A8565 /* DataCoreTestModels.xcdatamodel */,
 			);
-			currentVersion = 279142C923159B28002A8565 /* DataCoreTestModels.xcdatamodel */;
+			currentVersion = 270669832330822000FB0CEE /* DataCoreTestModels_v1.2.xcdatamodel */;
 			path = DataCoreTestModels.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
